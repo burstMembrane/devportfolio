@@ -1,0 +1,54 @@
+[{
+        "name": "Maze Malaise",
+        "imagePath": "../assets/img/maze.png",
+        "caption": "A Maze Game Built with JavaScript & Matter.js",
+        "url": "https://liamfpower.com/Mazemalaise/",
+        "repo": "https://github.com/burstMembrane/Mazemalaise",
+        "penHash": "zYxmdRK",
+        "languages": ["JavaScript, CSS, HTML"]
+    },
+    {
+        "name": "Colour Timer",
+        "imagePath": "../assets/img/preview.png",
+        "caption": "A moody coloured timer written in Vanilla JavaScript",
+        "url": "https://liamfpower.com/colourtimer/",
+        "repo": "https://github.com/burstMembrane/colourtimer",
+        "penHash": "ExadwvE",
+        "languages": ["jQuery UI", "JavaScript","HTML","CSS"]
+    },
+    {
+        "name": "Modal jQuery",
+        "imagePath": "../assets/img/preview.png",
+        "caption": "Using Bootstrap and jQuery to set up an image gallery",
+        "url": "https://liamfpower.com/bootstrapmodaljquery/",
+        "repo": "https://github.com/burstMembrane/bootstrapmodaljquery",
+        "penHash": "MWYPEQv",
+        "languages": ["jQuery", "Bootstrap","HTML","CSS"]
+    },
+    {
+        "name": "CLS",
+        "imagePath": "../assets/img/cls.gif",
+        "caption": "'ls' clone built in Node.js - colours and prints files",
+        "url": "",
+        "repo": "https://github.com/burstMembrane/cls",
+        "languages": ["Node.js", "Javascript"]
+    },
+    {
+        "name": "Grant Scraper",
+        "imagePath": "../assets/img/preview.png",
+        "caption": "Uses Python and jQuery to scrape Australian Government websites for grant opportunites",
+        "url": "https://liamfpower.com/grantscraper/",
+        "repo": "https://github.com/burstMembrane/grantscraper",
+        "penHash": "qBEJwRq",
+        "languages": ["Python", "jQuery","HTML","CSS","Bootstrap"]
+    },
+    {
+        "name": "FlexBox",
+        "imagePath": "../assets/img/preview.png",
+        "caption": "A JavaScript playground for exploring CSS Flex Box properties",
+        "url": "https://liamfpower.com/flexbox/",
+        "repo": "https://github.com/burstMembrane/flexbox",
+        "penHash": "KKwGXZW",
+        "languages": ["CSS", "JavaScript","HTML","CSS"]
+    }
+]

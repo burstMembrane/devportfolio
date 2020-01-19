@@ -1,0 +1,16 @@
+{
+  "name": "developerportfolio",
+  "version": "1.0.0",
+  "description": "Developer Portfolio Website for Liam Power",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "Liam Power",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
