@@ -9,7 +9,8 @@ const embed = (item) => {
         <span>See the Pen <a href="https://codepen.io/burstmembrane/pen/${item.penHash}">
         ${item.name}</a> by Liam Power (<a href="https://codepen.io/burstmembrane">@burstmembrane</a>)
         on <a href="https://codepen.io">CodePen</a>.</span>
-        </p>`;
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>`;
     } else {
         return `<iframe scrollable="no" src="${item.url}"></iframe>`
     }
@@ -32,6 +33,9 @@ const makeProject = (item) => {
             <p class="small">${item.caption}  </p>
             <p class="tags">${item.languages.join(", ")}</p>
             </div>`;
+
+
+            
 }
 
 
@@ -39,15 +43,24 @@ const makeProject = (item) => {
 
 const grid = document.querySelector('.grid');
 axios.get('../data/projects.json')
-    .then(function({
+    .then( function({
         data
     }) {
+    
+       
         const items = data;
         items.forEach((item) => {
-            grid.innerHTML += makeProject(item);
+         
+                grid.innerHTML += makeProject(item);
+        
+        
+       
         });
 
-        grid.innerHTML += `<script async src="./js/lib/ei.js"></script>`
-    });
+   
+      
+    })
+      
+
 
 
