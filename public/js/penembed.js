@@ -46,11 +46,8 @@ axios.get('../data/projects.json')
         items.forEach((item) => {
             grid.innerHTML += makeProject(item);
         });
+
+        grid.innerHTML += `<script async src="./js/lib/ei.js"></script>`
     });
 
 
-function __CodePenIFrameAddedToPage() {
-
-
-
-}
