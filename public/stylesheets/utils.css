@@ -14,13 +14,13 @@
 .float-right {
     float: right;
 }
+
 iframe scrollbar {
     width: 0px;
     /* remove scrollbar space */
     background: transparent;
     /* optional: just make scrollbar invisible */
 }
-
 
 scrollbar {
     width: 0px;
@@ -48,7 +48,7 @@ scrollbar {
 }
 
 .fullheight {
-    height: calc(100vh - 140px);
+    height: calc(100vh - 200px);
 }
 
 .firstflex {
@@ -56,6 +56,7 @@ scrollbar {
 }
 
 .animated {
+    /* preserve white space in animated text */
     opacity: 0.5;
 }
 
@@ -77,7 +78,7 @@ scrollbar {
 }
 
 .thin {
-    /* -webkit-text-stroke: 3px var(--main-bg); */
+    -webkit-text-stroke: 2px var(--main-bg);
 }
 
 .flip {

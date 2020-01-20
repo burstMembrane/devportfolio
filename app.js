@@ -1,5 +1,10 @@
 const express = require('express'),
+    axios = require('axios'),
+    path = require('path'),
     dotenv = require('dotenv');
+
+// load language json
+const languages = require('./public/data/skills.json')
 
 dotenv.config();
 const app = express();
@@ -10,13 +15,16 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-    res.render('index');
+
+    res.render('index', {
+        languages: languages
+    });
+
 })
 
 app.get('/projects', (req, res) => {
     res.render('projects');
 });
-
 
 
 app.get('/contact', (req, res) => {

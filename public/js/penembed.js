@@ -17,14 +17,14 @@ const embed = (item) => {
 };
 
 const makeProject = (item) => {
-    const divId = item.name.split(" ")[0];
+    const divId = item.name.split(" ")[0].toLowerCase();
     return `<div class="card padded border" id="${divId}">
 
     <div class="projectbuttons">
     <a class="expandproject " href="#${divId}"><i class="fas fa-expand thin"></i></a> <a class="" target="_blank" href=${item.url}><i class="fas fa-external-link-alt thin"></i></a> <a class="" target="_blank" href=${item.repo}><i class="fas fa-code thin"></i></a>
     </div> 
     <h2 class="centered">  ${item.name} </h2>  
-           
+
 
             <hr>
             <div class="thumbnail">
@@ -35,7 +35,7 @@ const makeProject = (item) => {
             </div>`;
 
 
-            
+
 }
 
 
@@ -43,24 +43,20 @@ const makeProject = (item) => {
 
 const grid = document.querySelector('.grid');
 axios.get('../data/projects.json')
-    .then( function({
+    .then(function({
         data
     }) {
-    
-       
+
+
         const items = data;
         items.forEach((item) => {
-         
-                grid.innerHTML += makeProject(item);
-        
-        
-       
+
+            grid.innerHTML += makeProject(item);
+
+
+
         });
 
         window.__CPEmbed(".codepen-later");
-      
+
     })
-      
-
-
-

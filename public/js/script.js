@@ -1,6 +1,17 @@
-$(document).ready(function() {
-    // toggle navbar 
+$(function() {
+    // toggle navbar
     let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
+    // Navbar hide on scroll
+    $(window).scroll(() => {
+        if(!isMobile) {
+            let scroll = $(document).scrollTop();
+            if(scroll == $('.navbar').height() && $('.navbar').css('display') !== "none") {
+                $('.navbar header').fadeOut(200);
+            } else {
+                $('.navbar').fadeIn(200);
+            }
+        }
+    });
 
     $('.toggle').click((e) => {
         console.log('clicked toggle')
@@ -9,56 +20,38 @@ $(document).ready(function() {
 
     $('.expandproject').click(function(e) {
 
-        if($('.navbar').height() !== 0) {
-            // $('.navbar').fadeToggle(200);
+        if($('.navbar').css('display') !== "none") {
+            $('.navbar').fadeToggle(200);
         }
+        e.preventDefault();
         $(this).parent().parent().toggleClass('fullwidth');
         $(this).parent().parent().find('iframe').toggleClass('fullheight');
-        $(this).parent().parent().find('code').toggleClass('zoomtext');
 
-        e.preventDefault();
-        setTimeout((aid) => {
-            var aid = $(this).attr("href");
-            $('html,body').animate({
-                scrollTop: $(aid).offset().top
-            }, 'fast');
-        }, 250);
+
+        const scrollTo = (id) => {
+            console.log($(id).offset().top)
+            $('html, body').animate({
+                scrollTop: $(id).offset().top + 100
+            }, 256);
+        };
+
+        let id = '#' + $(this).parent().parent().attr('id');
+        setTimeout(scrollTo.bind(null, id), 500);
+
     });
 
+})
 
 
 
-
-
-
-
-
-
-
+setTimeout(function() {
     // TOGGLE LANGUAGE POPUPS ON HOME PAGE
     $('.langpopup').click(function(e) {
-
         $(this).children().toggleClass('flip');
         $(this).next().toggleClass('hidden');
     });
-
-    // Navbar hide on scroll
-    $(window).scroll(() => {
-        if(!isMobile) {
-            let scroll = $(document).scrollTop();
-            if(scroll >= $('.navbar').height() && $('.navbar').height() !== 0) {
-
-                $('.navbar header').fadeOut(200);
-
-            } else {
-                $('.navbar').fadeIn(200);
-            }
-
-        }
-
-    });
-
 });
+
 
 
 
@@ -67,25 +60,27 @@ const animateText = (element, speed) => {
     // split into array of letters
     // make new array filled with spaces
     // iterate through that array, and add a letter from orignal string at index
-
-    const len = element.innerText.length;
     const str = element.innerText;
-    const spaces = new Array(len).fill(" ");
+
+    const textLen = element.innerText.length;
 
 
-    let idx = 0;
-    const animation = setInterval(() => {
+    const spaces = new Array(textLen).fill(`&nbsp;`);
 
+
+    let idx = -1;
+    setInterval(() => {
+
+            idx++;
+
+            spaces[idx] = str[idx]
             element.innerHTML = spaces.join("")
-                // spaces[idx % len] = str[idx % len]
 
-
-            if(idx === len + 1) {
+            if(idx === textLen) {
                 idx = -1;
                 spaces.fill(" ")
             }
 
-            idx++;
         },
         speed);
 }
@@ -93,6 +88,17 @@ const animateText = (element, speed) => {
 
 
 if(document.location.pathname === "/") {
-    anim = document.querySelector('.animated');
-    // animateText(anim, 500);
+    let animateSpans = $('.animated').toArray();
+    let h1 = document.querySelector('.menubar')
+
+
+
+
+    animateSpans.forEach((span) => {
+        animateText(span, 200);
+
+    })
+
+
+    //
 };

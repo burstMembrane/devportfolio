@@ -1,30 +1,43 @@
 <%- include('partials/header') %>
 
     <section class="content">
-        <h1>LIAM POWER <span class="animated"> >> </span> PROGRAMMER <span class="animated">
-            << </span>DEVELOPER </h1>
-        <div class="row">
-            <div class="textbox border">
-                <div class=menubar>
-                    ABOUT ME
+        <h1>LIAM POWER >> PROGRAMMER
+            << DEVELOPER </h1>
+                <div class="row">
+                    <div class="textbox border">
+                        <div class=menubar>
+                            ABOUT ME
+                        </div>
+                        <img class="profile padded" src="./assets/img/profile.jpg" alt="">
+                        <p class="padded ">
+                            I'm an <strong>Artist</strong>, <strong>Creative Coder</strong> and <strong>Web Developer
+                    </strong> from Melbourne, Australia. <br>
+                            <br> I have a passion for using open source tools and libraries to help make my work more scalable, responsive and user friendly. Feel free to click around this site and view a few of the projects I have worked on. These projects
+                            have expanded my skills in programming languages and frameworks, such as <span class='animated'>>>>></span></p>
+                    </div>
+                    <div class="textbox border">
+                        <div class=menubar>
+                            SKILLS
+                        </div>
+                        <ul class=langlist>
+
+                            <% if (languages) { console.log(languages) %>
+
+                                <% languages.forEach(language => {  %>
+                                    <li class="langpopup">
+                                        <%= language.language  %> <i class="fas fa-chevron-down thin"></i> </li>
+                                    <p class="popup hidden">
+                                        <%= language.desc %>
+                                    </p>
+
+                                    <% }) %>
+
+                                        <% } %>
+                        </ul>
+                    </div>
                 </div>
-                <img class="profile padded" src="./assets/img/profile.jpg" alt="">
-                <p class="padded ">
-                    I'm an <strong>Artist</strong>, <strong>Creative Coder</strong> and <strong>Web Developer
-                        </strong> from Melbourne, Australia. <br>
-                    <br> I have a passion for using open source tools and libraries to help make my work more scalable, responsive and user friendly. Feel free to click around this site and view a few of the projects I have worked on.  These projects have
-                    expanded my skills in programming languages and frameworks, such as <span class='animated'>>>>></span></p>
-            </div>
-            <div class="textbox border">
-                <div class=menubar>
-                 SKILLS
-                </div>
-                <ul class=langlist>
-                </ul>
-            </div>
-        </div>
     </section>
 
 
-    <script src="./js/languages.js"></script>
+    <!-- <script src="./js/languages.js"></script> -->
     <%- include('partials/footer') %>
