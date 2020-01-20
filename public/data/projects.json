@@ -5,7 +5,9 @@
         "url": "https://liamfpower.com/Mazemalaise/",
         "repo": "https://github.com/burstMembrane/Mazemalaise",
         "penHash": "zYxmdRK",
-        "languages": ["JavaScript, CSS, HTML"]
+        "languages": [
+            "JavaScript, CSS, HTML"
+        ]
     },
     {
         "name": "Colour Timer",
@@ -14,7 +16,12 @@
         "url": "https://liamfpower.com/colourtimer/",
         "repo": "https://github.com/burstMembrane/colourtimer",
         "penHash": "ExadwvE",
-        "languages": ["jQuery UI", "JavaScript","HTML","CSS"]
+        "languages": [
+            "jQuery UI",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ]
     },
     {
         "name": "Modal jQuery",
@@ -23,15 +30,12 @@
         "url": "https://liamfpower.com/bootstrapmodaljquery/",
         "repo": "https://github.com/burstMembrane/bootstrapmodaljquery",
         "penHash": "MWYPEQv",
-        "languages": ["jQuery", "Bootstrap","HTML","CSS"]
-    },
-    {
-        "name": "CLS",
-        "imagePath": "../assets/img/cls.gif",
-        "caption": "'ls' clone built in Node.js - colours and prints files",
-        "url": "",
-        "repo": "https://github.com/burstMembrane/cls",
-        "languages": ["Node.js", "Javascript"]
+        "languages": [
+            "jQuery",
+            "Bootstrap",
+            "HTML",
+            "CSS"
+        ]
     },
     {
         "name": "Grant Scraper",
@@ -40,7 +44,13 @@
         "url": "https://liamfpower.com/grantscraper/",
         "repo": "https://github.com/burstMembrane/grantscraper",
         "penHash": "qBEJwRq",
-        "languages": ["Python", "jQuery","HTML","CSS","Bootstrap"]
+        "languages": [
+            "Python",
+            "jQuery",
+            "HTML",
+            "CSS",
+            "Bootstrap"
+        ]
     },
     {
         "name": "FlexBox",
@@ -49,6 +59,23 @@
         "url": "https://liamfpower.com/flexbox/",
         "repo": "https://github.com/burstMembrane/flexbox",
         "penHash": "KKwGXZW",
-        "languages": ["CSS", "JavaScript","HTML","CSS"]
+        "languages": [
+            "CSS",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ]
+    },
+    {
+        "name": "CLS",
+        "imagePath": "../assets/img/cls.gif",
+        "caption": "'ls' clone built in Node.js - colours and prints files",
+        "url": "",
+        "repo": "https://github.com/burstMembrane/cls",
+        "gifHash": "QyVeaEgiDOYhff01p1",
+        "languages": [
+            "Node.js",
+            "Javascript"
+        ]
     }
 ]

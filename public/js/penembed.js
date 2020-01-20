@@ -1,11 +1,11 @@
 const embed = (item) => {
     // PROCESS JSON DATA AND RENDER HTML TEMPLATES
-    if(item.url === "") {
-        return `<iframe scrollable="no" src="${item.imagePath}"></iframe>`
+    if(item.gifHash) {
+        return `<iframe scrollable="no" src="https://giphy.com/embed/${item.gifHash}" width="100%" height="100%" style="overflow: hidden; width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" frameBorder="0" class="giphy-embed"  allowFullScreen></iframe>`
     }
 
     if(item.penHash) {
-        return `<p class="codepen" data-height="100%" data-theme-id="dark" data-default-tab="result" data-user="burstmembrane" data-preview="true" data-slug-hash="${item.penHash}" style="width: 100%; height: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" data-pen-title="${item.name}">
+        return `<p class="codepen" data-height="100%" data-theme-id="dark" data-default-tab="result" data-user="burstmembrane" data-preview="true" data-slug-hash="${item.penHash}" style="width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" data-pen-title="${item.name}">
         <span>See the Pen <a href="https://codepen.io/burstmembrane/pen/${item.penHash}">
         ${item.name}</a> by Liam Power (<a href="https://codepen.io/burstmembrane">@burstmembrane</a>)
         on <a href="https://codepen.io">CodePen</a>.</span>
@@ -13,31 +13,44 @@ const embed = (item) => {
     } else {
         return `<iframe scrollable="no" src="${item.url}"></iframe>`
     }
-}
+};
 
 const makeProject = (item) => {
     const divId = item.name.split(" ")[0];
-    return `
-            <div class="card border" id="${divId}">
-            <h1 class="centered">  <a class="expandproject float-left" href="#${divId}"><i class="fas fa-expand"></i></a> ${item.name} <a class="float-right" target="_blank" href=${item.url}><i class="fas fa-external-link-alt"></i></a>
-            <a class="float-right" target="_blank" href=${item.repo}><i class="fas fa-code"></i></a></h1> 
+    return `<div class="card padded border" id="${divId}">
+
+    <div class="projectbuttons">
+    <a class="expandproject " href="#${divId}"><i class="fas fa-expand thin"></i></a> <a class="" target="_blank" href=${item.url}><i class="fas fa-external-link-alt thin"></i></a> <a class="" target="_blank" href=${item.repo}><i class="fas fa-code thin"></i></a>
+    </div> 
+    <h2 class="centered">  ${item.name} </h2>  
+           
+
             <hr>
             <div class="thumbnail">
             ${embed(item)}
             </div>
-            <p class="small">${item.caption}</p>
-            <p class="tags">${item.languages.join(",")}</p>
-            </div>
-            `;
+            <p class="small">${item.caption}  </p>
+            <p class="tags">${item.languages.join(", ")}</p>
+            </div>`;
 }
 
 
+// ADD PROJECTS TO PAGE 
+
 const grid = document.querySelector('.grid');
-axios.get('../data//projects.json')
-    .then(function(response) {
-        const items = response.data;
+axios.get('../data/projects.json')
+    .then(function({
+        data
+    }) {
+        const items = data;
         items.forEach((item) => {
             grid.innerHTML += makeProject(item);
         });
-        grid.innerHTML = projectHTML;
     });
+
+
+function __CodePenIFrameAddedToPage() {
+
+
+
+}

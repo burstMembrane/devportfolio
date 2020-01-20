@@ -1,0 +1,89 @@
+.fullwidth {
+    display: flex;
+    flex-direction: column;
+    margin: 70px auto;
+    width: 100% !important;
+    flex-grow: 100%;
+    transition: 250ms;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+iframe scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+
+scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+
+/* optional: show position indicator in red */
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.zoomedtext {
+    font-size: 2rem;
+}
+
+.fullheight {
+    height: calc(100vh - 140px);
+}
+
+.firstflex {
+    order: -1;
+}
+
+.animated {
+    opacity: 0.5;
+}
+
+.padded {
+    padding: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.centered {
+    text-align: center;
+}
+
+.small {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.thin {
+    /* -webkit-text-stroke: 3px var(--main-bg); */
+}
+
+.flip {
+    opacity: 0.4;
+    -moz-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, -1);
+}
