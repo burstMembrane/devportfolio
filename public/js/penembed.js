@@ -5,7 +5,7 @@ const embed = (item) => {
     }
 
     if(item.penHash) {
-        return `<p class="codepen" data-height="100%" data-theme-id="dark" data-default-tab="result" data-user="burstmembrane" data-preview="true" data-slug-hash="${item.penHash}" style="width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" data-pen-title="${item.name}">
+        return `<p class="codepen-later" data-height="100%" data-theme-id="dark" data-default-tab="result" data-user="burstmembrane" data-preview="true" data-slug-hash="${item.penHash}" style="width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" data-pen-title="${item.name}">
         <span>See the Pen <a href="https://codepen.io/burstmembrane/pen/${item.penHash}">
         ${item.name}</a> by Liam Power (<a href="https://codepen.io/burstmembrane">@burstmembrane</a>)
         on <a href="https://codepen.io">CodePen</a>.</span>
@@ -57,7 +57,7 @@ axios.get('../data/projects.json')
        
         });
 
-   
+        window.__CPEmbed(".codepen-later");
       
     })
       
