@@ -212,7 +212,9 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+.codepen-late{
+    transition: 0.5s;
+}
 .toggle {
     position: fixed;
     text-align: center;
