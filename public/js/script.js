@@ -1,17 +1,33 @@
+const scrollNavHide = () => {
+
+
+    $(window).scroll(() => {
+
+        let $nav = $('.navbar')
+        let navHeight = $nav.height();
+        let navDisplay = $nav.css('display');
+        let scroll = $(document).scrollTop();
+
+        console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display${navDisplay}`)
+        if(scroll > navHeight && !navDisplay == "none") {
+
+            $('.navbar').fadeOut(200);
+        } else {
+            $('.navbar').fadeIn(200);
+        }
+
+    });
+
+
+
+}
+
+
 $(function() {
     // toggle navbar
     let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
     // Navbar hide on scroll
-    $(window).scroll(() => {
-        if(!isMobile) {
-            let scroll = $(document).scrollTop();
-            if(scroll == $('.navbar').height() && $('.navbar').css('display') !== "none") {
-                $('.navbar header').fadeOut(200);
-            } else {
-                $('.navbar').fadeIn(200);
-            }
-        }
-    });
+    // scrollNavHide();
 
     $('#contact').submit((e) => {
         $('#sendmsg').html(` <img class="spinner" src="assets/img/spinner.gif">`)
@@ -24,8 +40,8 @@ $(function() {
 
     $('.expandproject').click(function(e) {
 
-        if($('.navbar').css('display') !== "none") {
-            $('.navbar').fadeToggle(200);
+        if($('.navbar').height() !== 0) {
+            $('.navbar').fadeOut(200);
         }
         e.preventDefault();
         $(this).parent().parent().toggleClass('fullwidth');
@@ -92,16 +108,10 @@ const animateText = (element, speed) => {
 
 
 if(document.location.pathname === "/") {
-    let animateSpans = $('.animated').toArray();
-    let h1 = document.querySelector('.menubar')
 
 
 
 
-    animateSpans.forEach((span) => {
-        animateText(span, 200);
-
-    })
 
 
     //

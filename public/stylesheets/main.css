@@ -79,7 +79,6 @@ iframe {
 }
 
 .spinner {
-    focus: none;
     outline: none;
     padding: 0;
     margin: 0 auto;
