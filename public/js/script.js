@@ -13,6 +13,10 @@ $(function() {
         }
     });
 
+    $('#contact').submit((e) => {
+        $('#sendmsg').html(` <img class="spinner" src="assets/img/spinner.gif">`)
+    })
+
     $('.toggle').click((e) => {
         console.log('clicked toggle')
         $('.navbar.header').fadeToggle(200);

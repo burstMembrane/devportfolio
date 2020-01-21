@@ -7,14 +7,15 @@
 
             <div class="form-container">
 
-                <form action="/contact" method="POST" class="contact">
+                <form id="contact" action="/contact" method="POST" class="contact">
                     <input required type="text" name="message[name]" id="" placeholder="Name">
                     <input required type="email" name="message[email]" id="" placeholder="Your Email">
                     <textarea required name="message[text]" id="" cols="30" rows="10">Tell me about your project and how I can help. </textarea>
-                    <button>Send</button>
+                    <button id="sendmsg">Send</button>
                 </form>
+
                 <% if (message && message.name) { %>
-                    <p class="small"> Thanks for your message
+                    <p class=" small "> Thanks for your message
                         <%= message.name %> ! I'll be in touch soon. </p>
                     <% } %>
             </div>

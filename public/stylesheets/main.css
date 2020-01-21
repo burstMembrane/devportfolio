@@ -78,6 +78,15 @@ iframe {
     align-items: center;
 }
 
+.spinner {
+    focus: none;
+    outline: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
 .contact {
     display: flex;
     flex-direction: column;
