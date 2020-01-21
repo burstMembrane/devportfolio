@@ -1,0 +1,16 @@
+<div class="card padded border" id="${divId}">
+
+    <div class="projectbuttons">
+        <a class="expandproject " href="#${divId}"><i class="fas fa-expand thin"></i></a>
+        <a class="" target="_blank" href=${item.url}><i class="fas fa-external-link-alt thin"></i></a>
+        <a class="" target="_blank" href=${item.repo}><i class="fas fa-code thin"></i></a>
+    </div>
+
+    <h2 class="centered"> ${item.name} </h2>
+    <hr>
+    <div class="thumbnail">
+        ${embed(item)}
+    </div>
+    <p class="small">${item.caption} </p>
+    <p class="tags">${item.languages.join(", ")}</p>
+</div>
