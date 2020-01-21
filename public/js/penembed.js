@@ -27,7 +27,7 @@ const makeProject = (item) => {
     return `<div class="card padded border" id="${divId}">
 
     <div class="projectbuttons">
-        <a class="expandproject " href="#${divId}"><i class="fas fa-expand thin"></i></a>
+        <a class="expand" href="#${divId}"><i class="fas fa-expand thin"></i></a>
         <a class="" target="_blank" href=${item.url}><i class="fas fa-external-link-alt thin"></i></a>
         <a class="" target="_blank" href=${item.repo}><i class="fas fa-code thin"></i></a>
     </div>
