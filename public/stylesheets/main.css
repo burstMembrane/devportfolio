@@ -80,6 +80,7 @@ input {
 }
 
 button {
+    outline: none;
     font-size: inherit;
     border: var(--border-style);
     background-color: var(--main-bg);
@@ -222,10 +223,11 @@ button {
     margin: 0 5px;
     border-radius: 50%;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .card i:hover {
+    color: var(--sec-fg);
     background-color: var(--sec-bg);
     transition: 250ms;
 }
@@ -294,6 +296,29 @@ button {
     margin: 0 auto;
     width: 100px;
     height: 100px;
+}
+
+.langpopup:hover {
+    cursor: pointer;
+    color: var(--sec-fg);
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--sec-fg);
+    opacity: 1;
+    /* Firefox */
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: --sec-bg;
+    background-color: yellow;
+}
+
+::selection {
+    color: --sec-bg;
+    background-color: var(--sec-bg);
 }
 
 

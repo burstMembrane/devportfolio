@@ -1,7 +1,7 @@
 class Colour {
     constructor() {
         this.min = 0;
-        this.max = 32;
+        this.max = 40;
         this.r = this.randRange(this.min, this.max);
         this.g = this.randRange(this.min, this.max);
         this.b = this.randRange(this.min, this.max);
@@ -16,12 +16,13 @@ class Colour {
         return `rgb(${this.r},${this.g},${this.b})`;
     }
 
-    animateColour(selector, background, foreground, secondaryforeground, time) {
+    animateColour(selector, background, foreground, secondaryforeground, secondaryBackground, time) {
 
 
         $(selector).css("--main-bg", background);
         $(selector).css("--main-fg", foreground);
         $(selector).css("--sec-fg", secondaryforeground);
+        $(selector).css("--sec-bg", secondaryBackground);
 
         $(selector).animate({
             backgroundColor: background,
@@ -99,4 +100,4 @@ class Colour {
 const c = new Colour()
 
 
-c.animateColour('body', c.randomColor(), c.oppositeFullBrightness(50, 90), c.oppositeFullBrightness(50, 35), 500)
+c.animateColour('body', c.randomColor(), c.oppositeFullBrightness(50, 95), c.oppositeFullBrightness(50, 60), c.opposite(), 500, )
