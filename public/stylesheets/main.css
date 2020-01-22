@@ -5,6 +5,8 @@
 html {
     scroll-behavior: auto;
     font-size: 100%;
+    width: calc(100% - 2px);
+    min-height: 100vh;
 }
 
 body {
@@ -13,11 +15,16 @@ body {
     --sec-fg: rgb(154, 154, 154);
     --sec-bg: rgb(36, 36, 36);
     --border-style: 1px solid var(--main-fg);
+    /* FONT SIZINGS */
+    --large-font: 2.0rem;
+    --med-font: 1.5rem;
+    --sm-font: 1.25rem;
     background-color: var(--main-bg);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     color: var(--main-fg);
-    font-weight: 100;
-    width: 100%;
+    font-weight: 200;
+    width: calc(100% - 2px);
+    min-height: 100vh;
 }
 
 hr {
@@ -36,22 +43,22 @@ a {
 }
 
 hr {
-    border-top: --border-style: 1px solid var(--main-fg);
+    border-top: var(--border-style);
     opacity: 0.4;
     padding: 0;
     margin: 7px auto;
 }
 
 h1 {
-    border: --border-style: 1px solid var(--main-fg);
+    border: var(--border-style);
     padding: 1rem;
     margin-bottom: 1rem;
     font-weight: 100;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: var(--large-font);
     font-weight: 100;
 }
 
@@ -69,11 +76,46 @@ textarea {
     padding: 1rem;
     border: var(--border-style);
     margin: 1rem;
-    font-size: 2rem;
+    font-size: var(--med-font);
     background-color: var(--main-bg);
     color: var(--main-fg);
     display: flex;
 }
+
+select {
+    border-radius: 0;
+    width: 50vw;
+    padding: 1rem;
+    border: var(--border-style);
+    margin: 0 auto;
+    font-size: var(--med-font);
+    background-color: var(--main-bg);
+    color: var(--main-fg);
+    display: flex;
+}
+
+
+/* 
+.buttongroup {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.checkbox {
+    z-index: 9999999;
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid white;
+    margin: 1rem;
+}
+
+.check {
+    background-color: none;
+} */
 
 input {
     height: 3rem;
@@ -114,9 +156,14 @@ button {
     border-bottom: none;
 }
 
+p {
+    font-size: var(--med-font);
+    margin-top: 0;
+}
+
 .popup {
     margin: 1rem 2rem 1rem 0;
-    font-size: 1.5rem;
+    font-size: var(--med-font);
 }
 
 .navbar {
@@ -138,8 +185,8 @@ button {
 .footer {
     position: -webkit-sticky;
     /* Safari */
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: calc(100vh - 72px);
 }
 
 .navbar ul {
@@ -154,7 +201,7 @@ button {
     display: inline-flex;
     color: inherit;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: var(--large-font);
     list-style: none;
     list-style-type: none;
     flex-direction: row;
@@ -173,7 +220,6 @@ button {
     text-align: center;
     width: calc(100%);
     padding: 20px 0px;
-    border-bottom: var(--border-style);
 }
 
 .card img {
@@ -186,7 +232,7 @@ button {
     width: 900px;
     margin: 1rem 1rem;
     align-items: baseline;
-    font-size: 2rem;
+    font-size: var(--med-font);
 }
 
 .grid {
@@ -252,7 +298,7 @@ button {
     flex-wrap: wrap;
 }
 
-.codepen-late {
+.codepen-later {
     transition: 0.5s;
 }
 
@@ -337,6 +383,17 @@ button {
 }
 
 @media only screen and (max-width: 900px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-weight: 200;
+    }
+    .animated {
+        display: none;
+    }
+    hr {
+        display: none;
+    }
     p {
         padding: 0.5rem 0.5rem;
     }
@@ -358,7 +415,7 @@ button {
         float: none;
     }
     .padded {
-        padding: 2rem 1rem;
+        padding: 2rem 0.5rem;
     }
     .expandproject {
         display: none;
@@ -379,20 +436,21 @@ button {
     }
     .card i {
         margin: 0px 10px;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
     h1 {
         border: none;
-        font-size: 3rem;
+        font-size: 2.5rem;
         width: 90%;
-        margin: 0 auto;
+        margin: 1rem auto;
     }
     h2 {
-        font-size: 2.5rem;
+        padding: 1rem auto;
+        font-size: 2.0rem;
     }
     .small {
         padding: 0;
-        font-size: 1.5rem;
+        font-size: 1.125rem;
     }
     .grid {
         width: 100vw;
@@ -404,7 +462,7 @@ button {
         max-width: 100vw;
     }
     .navbar ul li {
-        font-size: 2rem;
+        font-size: var(--med-font);
         text-align: center;
         width: 100vw;
     }
@@ -415,10 +473,11 @@ button {
         box-shadow: none;
     }
     .footer {
+        opacity: 0;
         display: none;
     }
     .textbox {
-        width: 100vw;
+        width: calc(100% - 2px);
     }
     .card p {
         padding: 1rem 1rem;
@@ -432,5 +491,12 @@ button {
     }
     .toggle {
         display: block;
+    }
+    .expand {
+        display: none;
+    }
+    .contact {
+        margin: 0;
+        padding: 0;
     }
 }

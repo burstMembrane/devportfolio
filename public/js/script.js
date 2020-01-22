@@ -1,22 +1,26 @@
+let ishidden = false;
+let isfs = false;
 const scrollNavHide = () => {
+
     $(window).scroll(() => {
         let $nav = $('.navbar');
         let navHeight = $nav.height();
         let navDisplay = $nav.css('display');
 
+
         let scroll = $(document).scrollTop();
         // console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display${navDisplay}`);
-        if(scroll > navHeight && navDisplay !== 'none') {
-            $('.navbar.header').fadeOut(200);
-            // $('.navbar.footer').fadeOut(200);
+        if(scroll > navHeight && !ishidden) {
+            $('.navbar').fadeOut(200);
+            ishidden = true;
+            //
 
-        } else {
-            $('.navbar.header').fadeIn(200);
+        } else if(scroll < navHeight && ishidden && !isfs) {
+            $('.navbar').fadeIn(200);
+            ishidden = false;
         }
 
-        if(scroll + $(window).height() == $(document).height() - navHeight) {
-            $('.navbar.footer').fadeIn(200);
-        }
+
     });
 };
 
@@ -42,6 +46,13 @@ const expandOnClick = () => {
         // fade out navbar when project goes fs
         if($('.navbar').height() !== 0) {
             $('.navbar').fadeOut(200);
+            isfs = true;
+            ishidden = true;
+        } else {
+            $('.navbar').fadeIn(200);
+            isfs = false;
+            ishidden = false;
+
         }
 
 
@@ -63,8 +74,13 @@ $(document).ready(function() {
 
 
 
+    $('.checkbox').click(function(e) {
+
+        $(this).children().toggle();
+
+    });
     // toggle navbar
-    let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
+
 
     // scrollNavHide();
     // wait until divs have loaded to set up event listeners.
@@ -90,9 +106,9 @@ $(document).ready(function() {
     $('.toggle').click((e) => {
 
         $('.navbar.header').fadeToggle(200);
-
-
     });
+    let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
+    if(!isMobile) scrollNavHide();
 
 
     // on click a lang dropdown

@@ -6,7 +6,7 @@ const express = require('express'),
     dotenv = require('dotenv');
 
 // load language json
-const languages = require('./public/data/skills.json')
+const languages = require('./public/data/skills.json');
 
 dotenv.config();
 const app = express();
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
         languages: languages
     });
 
-})
+});
 
 app.get('/projects', (req, res) => {
     res.render('projects');
@@ -65,9 +65,9 @@ app.post('/contact', (req, res) => {
             message: req.body.message
         });
     });
-})
+});
 
 
 app.listen(process.env.PORT, process.env.HOST, () => {
-    console.log(`server running on http://${process.env.HOST}:${process.env.PORT}`)
+    console.log(`server running on http://${process.env.HOST}:${process.env.PORT}`);
 });

@@ -1,7 +1,7 @@
 class Colour {
     constructor() {
         this.min = 0;
-        this.max = 40;
+        this.max = 35;
         this.r = this.randRange(this.min, this.max);
         this.g = this.randRange(this.min, this.max);
         this.b = this.randRange(this.min, this.max);
@@ -100,4 +100,4 @@ class Colour {
 const c = new Colour()
 
 
-c.animateColour('body', c.randomColor(), c.oppositeFullBrightness(50, 95), c.oppositeFullBrightness(50, 60), c.opposite(), 500, )
+c.animateColour('body', c.randomColor(), c.oppositeFullBrightness(25, 80), c.oppositeFullBrightness(40, 60), c.opposite(), 500, )

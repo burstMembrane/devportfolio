@@ -12,7 +12,6 @@
 }
 
 .centered {
-    margin-top: 0;
     text-align: center;
 }
 
@@ -46,13 +45,6 @@ scrollbar {
     background: transparent;
 }
 
-::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--sec-fg);
-    opacity: 1;
-    /* Firefox */
-}
-
 .zoomedtext {
     font-size: 2rem;
 }
@@ -83,7 +75,7 @@ scrollbar {
 }
 
 .small {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: left;
 }
 
