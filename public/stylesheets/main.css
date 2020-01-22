@@ -36,14 +36,14 @@ a {
 }
 
 hr {
-    border-top: 1px dotted white;
+    border-top: --border-style: 1px solid var(--main-fg);
     opacity: 0.4;
     padding: 0;
     margin: 7px auto;
 }
 
 h1 {
-    border: 1px solid white;
+    border: --border-style: 1px solid var(--main-fg);
     padding: 1rem;
     margin-bottom: 1rem;
     font-weight: 100;
