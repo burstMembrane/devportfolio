@@ -11,9 +11,12 @@
     float: left;
 }
 
-.float-right {
-    float: right;
+.centered {
+    margin-top: 0;
+    text-align: center;
 }
+
+.float-right {}
 
 iframe scrollbar {
     width: 0px;
@@ -87,4 +90,17 @@ scrollbar {
     -o-transform: scale(-1, -1);
     -webkit-transform: scale(-1, -1);
     transform: scale(-1, -1);
+}
+
+.error {
+    position: fixed;
+    left: 25%;
+    right: 25%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    width: 50%;
+    display: flex;
+    background-color: rgb(114, 0, 0);
 }

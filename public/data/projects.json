@@ -67,15 +67,17 @@
         ]
     },
     {
-        "name": "CLS",
+        "name": "Theme Disco",
         "imagePath": "../assets/img/cls.gif",
-        "caption": "'ls' clone built in Node.js - colours and prints files",
-        "url": "",
-        "repo": "https://github.com/burstMembrane/cls",
-        "gifHash": "QyVeaEgiDOYhff01p1",
+        "caption": "Changing CSS theme colours with jQuery animate()",
+        "url": "https://codepen.io/burstmembrane/pen/mdyaqLJ",
+        "repo": "https://codepen.io/burstmembrane/pen/mdyaqLJ",
+        "penHash": "mdyaqLJ",
         "languages": [
-            "Node.js",
-            "Javascript"
+            "jQuery",
+            "Javascript",
+            "HTML",
+            "SCSS"
         ]
     }
 ]

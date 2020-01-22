@@ -1,62 +1,78 @@
-// Expand project to fullscreen and scroll to project
+const scrollNavHide = () => {
+    $(window).scroll(() => {
+        let $nav = $('.navbar');
+        let navHeight = $nav.height();
+        let navDisplay = $nav.css('display');
 
-$(document).ready(function() {
-    let isNavHidden = false;
+        let scroll = $(document).scrollTop();
+        // console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display${navDisplay}`);
+        if(scroll > navHeight && navDisplay !== 'none') {
+            $('.navbar.header').fadeOut(200);
+            // $('.navbar.footer').fadeOut(200);
+
+        } else {
+            $('.navbar.header').fadeIn(200);
+        }
+
+        if(scroll + $(window).height() == $(document).height() - navHeight) {
+            $('.navbar.footer').fadeIn(200);
+        }
+    });
+};
+
+
+// local function to scroll to div
+const scrollTo = (id) => {
+    console.log($(id).offset().top);
+    $('html, body').animate({
+        scrollTop: $(id).offset().top + 100
+    }, 256);
+};
+
+
+const expandOnClick = () => {
+
+
+
+    // get current href of clicked element
 
     $('.expand').click(function(e) {
-        // local function to scroll to div
-        const scrollTo = (id) => {
-            console.log($(id).offset().top);
-            $('html, body').animate({
-                scrollTop: $(id).offset().top + 100
-            }, 256);
-        };
+
+        let link = $(this).attr('href');
         // fade out navbar when project goes fs
         if($('.navbar').height() !== 0) {
             $('.navbar').fadeOut(200);
         }
+
+
+
         // dont jump to anchor
         e.preventDefault();
-        // find parent of expand button (.card);
-        console.log($(this).parent().parent())
-        $(this).parent().parent().toggleClass('fullwidth');
-        $(this).parent().parent().find('iframe').toggleClass('fullheight');
-        let id = '#' + $(this).parent().parent().attr('id');
-        setTimeout(scrollTo.bind(null, id), 500);
+        // find use link href to find div id
+
+        $(link).toggleClass('fullwidth');
+        $(link).find('iframe').toggleClass('fullheight');
+
+        setTimeout(scrollTo.bind(null, link), 500);
     });
 
+}
 
-    const scrollNavHide = () => {
-        $(window).scroll(() => {
-            let $nav = $('.navbar');
-            let navHeight = $nav.height();
-            let navDisplay = $nav.css('display');
-            console.log(navDisplay)
-            let scroll = $(document).scrollTop();
-            // console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display${navDisplay}`);
-            if(scroll > navHeight && navHeight > 0) {
-                $('.navbar.header').fadeOut(200);
-                $('.navbar.footer').fadeOut(200);
-
-            } else {
-                $('.navbar.header').fadeIn(200);
-            }
-
-            if($(window).scrollTop() + $(window).height() == $(document).height()) {
-                $('.navbar.footer').fadeIn(200);
-            }
-        });
-    };
-
-
+$(document).ready(function() {
+    let isNavHidden = false;
 
 
 
     // toggle navbar
     let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
 
-    scrollNavHide();
+    // scrollNavHide();
+    // wait until divs have loaded to set up event listeners.
 
+
+
+
+    setTimeout(expandOnClick, 500);
     // ================
     // EVENT LISTENERS
     // ===============
@@ -72,7 +88,7 @@ $(document).ready(function() {
     // On Mobile navbar toggle click
     // fade navbars
     $('.toggle').click((e) => {
-        console.log('clicked toggle');
+
         $('.navbar.header').fadeToggle(200);
 
 
