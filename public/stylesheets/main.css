@@ -80,17 +80,20 @@ textarea {
     background-color: var(--main-bg);
     color: var(--main-fg);
     display: flex;
+    font-family: inherit;
 }
 
 select {
     border-radius: 0;
-    width: 50vw;
-    padding: 1rem;
+    width: 80%;
+    height: 4rem;
+    align-self: flex-start;
+    padding: 0;
     border: var(--border-style);
-    margin: 0 auto;
+    margin: 1rem auto;
     font-size: var(--med-font);
     background-color: var(--main-bg);
-    color: var(--main-fg);
+    color: var(--sec-fg);
     display: flex;
 }
 
@@ -296,7 +299,6 @@ p {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    
 }
 
 .codepen-later {
