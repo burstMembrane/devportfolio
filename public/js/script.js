@@ -1,21 +1,23 @@
 let ishidden = false;
-let isfs = false;
+let isExpanding = false;
 const scrollNavHide = () => {
 
     $(window).scroll(() => {
-        let $nav = $('.navbar');
+        let $nav = $('.navbar.header');
         let navHeight = $nav.height();
         let navDisplay = $nav.css('display');
 
 
         let scroll = $(document).scrollTop();
-        // console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display${navDisplay}`);
+
+        if(scroll < navHeight) {console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display: ${navDisplay} \n Nav Hidden: ${ishidden} \n  isExpanding: ${isExpanding}`);}
+        
         if(scroll > navHeight && !ishidden) {
             $('.navbar').fadeOut(200);
             ishidden = true;
             //
 
-        } else if(scroll < navHeight && ishidden && !isfs) {
+        } else if(scroll < navHeight && ishidden && !isExpanding) {
             $('.navbar').fadeIn(200);
             ishidden = false;
         }
@@ -30,27 +32,31 @@ const scrollTo = (id) => {
     console.log($(id).offset().top);
     $('html, body').animate({
         scrollTop: $(id).offset().top + 100
-    }, 256);
+    }, 256, () =>{
+        // finished operation - unblock scroll listener
+        isExpanding = false;
+    });
+
 };
 
 
 const expandOnClick = () => {
 
 
-
     // get current href of clicked element
 
     $('.expand').click(function(e) {
 
+        isExpanding = true;
         let link = $(this).attr('href');
         // fade out navbar when project goes fs
         if($('.navbar').height() !== 0) {
             $('.navbar').fadeOut(200);
-            isfs = true;
+        
             ishidden = true;
         } else {
             $('.navbar').fadeIn(200);
-            isfs = false;
+          
             ishidden = false;
 
         }
@@ -65,24 +71,23 @@ const expandOnClick = () => {
         $(link).find('iframe').toggleClass('fullheight');
 
         setTimeout(scrollTo.bind(null, link), 500);
+        
     });
 
 }
 
 $(document).ready(function() {
-    let isNavHidden = false;
 
 
+    // $('.checkbox').click(function(e) {
 
-    $('.checkbox').click(function(e) {
+    //     $(this).children().toggle();
 
-        $(this).children().toggle();
-
-    });
+    // });
     // toggle navbar
 
 
-    // scrollNavHide();
+   
     // wait until divs have loaded to set up event listeners.
 
 
@@ -107,8 +112,10 @@ $(document).ready(function() {
 
         $('.navbar.header').fadeToggle(200);
     });
-    let isMobile = window.matchMedia('only screen and (max-width: 900px)').matches;
+    let isMobile = window.innerWidth < 600;
     if(!isMobile) scrollNavHide();
+
+
 
 
     // on click a lang dropdown
