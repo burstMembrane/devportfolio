@@ -120,6 +120,7 @@ input {
 }
 
 button {
+    margin-top: 1rem;
     outline: none;
     font-size: inherit;
     border: var(--border-style);
@@ -230,6 +231,7 @@ p {
     width: 100%;
     margin: 1rem 1rem;
     align-items: baseline;
+    flex-grow: 1;
     font-size: var(--med-font);
 }
 
@@ -294,6 +296,7 @@ p {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    
 }
 
 .codepen-later {

@@ -10,7 +10,7 @@ const scrollNavHide = () => {
 
         let scroll = $(document).scrollTop();
 
-        if(scroll < navHeight) {console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display: ${navDisplay} \n Nav Hidden: ${ishidden} \n  isExpanding: ${isExpanding}`);}
+        // if(scroll < navHeight) {console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display: ${navDisplay} \n Nav Hidden: ${ishidden} \n  isExpanding: ${isExpanding}`);}
         
         if(scroll > navHeight && !ishidden) {
             $('.navbar').fadeOut(200);
@@ -31,7 +31,7 @@ const scrollNavHide = () => {
 const scrollTo = (id) => {
     console.log($(id).offset().top);
     $('html, body').animate({
-        scrollTop: $(id).offset().top + 100
+        scrollTop: $(id).offset().top + 30
     }, 256, () =>{
         // finished operation - unblock scroll listener
         isExpanding = false;
@@ -113,6 +113,8 @@ $(document).ready(function() {
         $('.navbar.header').fadeToggle(200);
     });
     let isMobile = window.innerWidth < 600;
+
+    console.log(isMobile)
     if(!isMobile) scrollNavHide();
 
 

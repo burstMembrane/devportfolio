@@ -3,8 +3,9 @@
     flex-direction: column;
     margin: 70px auto;
     width: 100% !important;
+  
     flex-grow: 100%;
-    transition: 250ms;
+    transition: 100ms;
 }
 
 .float-left {
@@ -50,12 +51,25 @@ scrollbar {
 }
 
 .fullheight {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 300px);
 }
 
 .firstflex {
     order: -1;
 }
+
+
+a[title]:hover:before {
+    content: attr(title);
+    position: absolute;
+    color: var(--sec-fg);
+      font-size: 1.0rem;
+  
+    margin-top: -1.5rem;
+     
+      transition: 0.5s;
+  
+  }
 
 .animated {
     /* preserve white space in animated text */
