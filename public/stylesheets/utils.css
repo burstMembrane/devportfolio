@@ -66,9 +66,7 @@ a[title]:hover:before {
       font-size: 1.0rem;
   
     margin-top: -1.5rem;
-     
       transition: 0.5s;
-  
   }
 
 .animated {

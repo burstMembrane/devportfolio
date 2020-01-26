@@ -6,7 +6,7 @@ html {
     scroll-behavior: auto;
     font-size: 100%;
     width: calc(100% - 2px);
-    min-height: 100vh;
+    height: 100%;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
     --sec-bg: rgb(36, 36, 36);
     --border-style: 1px solid var(--main-fg);
     /* FONT SIZINGS */
-    --large-font: 2.0rem;
+    --large-font: 2rem;
     --med-font: 1.5rem;
     --sm-font: 1.25rem;
     background-color: var(--main-bg);
@@ -176,19 +176,24 @@ p {
     right: 0;
     flex-wrap: wrap;
     width: calc(100% - 4px);
-    height: 70px;
     display: flex;
     flex-direction: row;
     background-color: var(--main-bg);
     color: inherit;
-    border: var(--border-style);
+    border-bottom: var(--border-style);
 }
 
 .footer {
+    border-top: var(--border-style);
     position: -webkit-sticky;
+    position: sticky;
     /* Safari */
     position: fixed;
-    top: calc(100vh - 72px);
+    top: calc(100vh - 70px);
+}
+
+.footer ul {
+    margin-bottom: 0;
 }
 
 .navbar ul {
@@ -229,7 +234,6 @@ p {
 }
 
 .textbox {
-    overflow: scroll;
     max-width: 1000px;
     width: 100%;
     margin: 1rem 1rem;
@@ -449,7 +453,7 @@ p {
     }
     h2 {
         padding: 1rem auto;
-        font-size: 2.0rem;
+        font-size: 2rem;
     }
     .small {
         margin: 0;
@@ -477,6 +481,7 @@ p {
     }
     .footer {
         position: sticky;
+        bottom: 0;
         display: flex;
         flex-direction: row;
     }

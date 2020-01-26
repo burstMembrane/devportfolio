@@ -5,28 +5,36 @@
             <<</span> </h1>
         <div class="textbox border">
 
-            <div class="form-container">
+            <% if (message && message.name) { %>
+                <br>
+                <p class=" small "> Thanks for your message
+                    <%= message.name %> ! I'll be in touch soon. </p>
+                <br>
+                <% } %>
 
-                <form id="contact" action="/contact" method="POST" class="contact">
-                    <input required type="text" name="message[name]" id="" placeholder="Name">
-                    <input required type="email" name="message[email]" id="" placeholder="Your Email">
+                    <div class="form-container">
 
-                    <!-- <select name="message[category]">
-                        <option value="WebDev">Web Development</option>
-                        <option value="Design">Design</option>
-                        <option value="JavaScript">JavaScript Programming</option>
-                        <option value="General">General Enquiry</option>
-                      </select> -->
+                        <form id="contact" action="/contact" method="POST" class="contact">
+                            <input required type="text" name="message[name]" id="" placeholder="Name">
+                            <input required type="email" name="message[email]" id="" placeholder="Email">
 
-                    <textarea required placeholder="Tell me about your project and how I can help." name="message[text]" id="" cols="30" rows="10"></textarea>
-                    <button id="sendmsg">Send</button>
-                </form>
+                            <select name="message[category]">
+                            <option value="WebDev">Web Development</option>
+                            <option value="Design">Design</option>
+                            <option value="JavaScript">JavaScript Programming</option>
+                            <option value="General">General Enquiry</option>
+                        </select>
 
-                <% if (message && message.name) { %>
-                    <p class=" small "> Thanks for your message
-                        <%= message.name %> ! I'll be in touch soon. </p>
-                    <% } %>
-            </div>
+                            <textarea required placeholder="Tell me about your project and how I can help." name="message[text]" id="" cols="30" rows="10"></textarea>
+                            <button id="sendmsg">Send</button>
+                        </form>
+
+
+
+
+                    </div>
+
+
         </div>
 
     </section>

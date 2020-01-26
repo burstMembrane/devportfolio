@@ -53,7 +53,7 @@ app.post('/contact', (req, res) => {
         to: req.body.message.email, // list of receivers
         subject: "Your Message", // Subject line
         text: req.body.message.text, // plain text body
-        html: `<strong>${req.body.message.text}</strong>` // html body
+        html: `${req.body.message.text}` // html body
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
