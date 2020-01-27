@@ -39,17 +39,14 @@ const projectLinks = () => {
                 }
             })
         }
-    }
+    };
+
+    
     // search the projects json language fields, if language === project, Display project title with link. 
 
 app.get('/', (req, res) => {
 
-
     projectLinks();
-
-
-
-
 
     res.render('index', {
         skills: skills

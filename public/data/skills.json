@@ -16,7 +16,7 @@
     },
     {
         "language": "Node.js",
-        "desc": "Sites I have built revolve around the Express Framework and NPM modules such as Passport, Body-Parser, EJS and others. I have created a NPM mode called cls--see project page for more detail"
+        "desc": "Sites I have built revolve around the Express Framework and NPM modules such as Passport, Body-Parser, EJS and others. I have created a NPM project called cls -- see project page for more detail"
     },
     {
         "language": "Python",
@@ -31,7 +31,7 @@
         "desc": "Through my artistic practice I have used IoT and embedded solutions for video playback, sculpture, data processing and as servers for dynamic sites. I am competent and comfortable working with and debugging these systems."
     },
     {
-        "language": "Processing, p5.js",
+        "language": "Processing & p5.js",
         "desc": "Generating animations and graphics using JavaScript and Java frameworks."
     }
 ]

@@ -190,7 +190,7 @@ p {
 }
 
 .projectlinks a {
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
 }
 
 .projectlinks a:hover {
@@ -254,7 +254,6 @@ p {
     width: 100%;
     margin: 1rem 1rem;
     align-items: baseline;
-    flex-grow: 1;
     font-size: var(--med-font);
 }
 
@@ -525,10 +524,11 @@ p {
         padding: 0;
     }
     #footer {
+        border-bottom: none;
+        border-top: var(--border-style);
         display: flex;
         position: -webkit-sticky;
         position: sticky;
-        border: none;
         width: 100%;
     }
     #footer ul {
