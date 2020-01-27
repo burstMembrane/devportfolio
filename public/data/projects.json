@@ -1,15 +1,4 @@
 [{
-        "name": "Maze Malaise",
-        "imagePath": "../assets/img/maze.png",
-        "caption": "A Maze Game Built with JavaScript & Matter.js",
-        "url": "https://liamfpower.com/Mazemalaise/",
-        "repo": "https://github.com/burstMembrane/Mazemalaise",
-        "penHash": "zYxmdRK",
-        "languages": [
-            "JavaScript, CSS, HTML"
-        ]
-    },
-    {
         "name": "Colour Timer",
         "imagePath": "../assets/img/preview.png",
         "caption": "A moody coloured timer written in Vanilla JavaScript",
@@ -21,7 +10,20 @@
             "JavaScript",
             "HTML",
             "CSS"
-        ]
+        ],
+        "show": "true"
+    },
+    {
+        "name": "Maze Malaise",
+        "imagePath": "../assets/img/maze.png",
+        "caption": "A Maze Game Built with JavaScript & Matter.js",
+        "url": "https://liamfpower.com/Mazemalaise/",
+        "repo": "https://github.com/burstMembrane/Mazemalaise",
+        "penHash": "zYxmdRK",
+        "languages": [
+            "JavaScript, CSS, HTML"
+        ],
+        "show": "true"
     },
     {
         "name": "Modal jQuery",
@@ -35,7 +37,8 @@
             "Bootstrap",
             "HTML",
             "CSS"
-        ]
+        ],
+        "show": "true"
     },
     {
         "name": "Grant Scraper",
@@ -47,10 +50,9 @@
         "languages": [
             "Python",
             "jQuery",
-            "HTML",
-            "CSS",
             "Bootstrap"
-        ]
+        ],
+        "show": "true"
     },
     {
         "name": "FlexBox",
@@ -64,7 +66,8 @@
             "JavaScript",
             "HTML",
             "CSS"
-        ]
+        ],
+        "show": "true"
     },
     {
         "name": "Theme Disco",
@@ -78,6 +81,19 @@
             "Javascript",
             "HTML",
             "SCSS"
-        ]
+        ],
+        "show": "true"
+    },
+    {
+        "name": "CLS",
+        "imagePath": "../assets/img/cls.gif",
+        "caption": "",
+        "url": "https://github.com/burstMembrane/cls",
+        "repo": "https://github.com/burstMembrane/cls",
+        "languages": [
+            "Node.js",
+            "NPM"
+        ],
+        "show": "false"
     }
 ]

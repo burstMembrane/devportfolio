@@ -2,6 +2,8 @@
 
 const embed = (item) => {
     // PROCESS JSON DATA AND RENDER HTML TEMPLATES
+
+
     if(item.gifHash) {
         return `<iframe scrollable="no" src="https://giphy.com/embed/${item.gifHash}" width="100%" height="100%" style="overflow: hidden; width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" frameBorder="0" class="giphy-embed"  allowFullScreen></iframe>`;
     }
@@ -15,6 +17,7 @@ const embed = (item) => {
     } else {
         return `<iframe scrollable="no" src="${item.url}"></iframe>`;
     }
+
 };
 
 
@@ -54,9 +57,9 @@ axios.get('../data/projects.json')
 
         const items = data;
         items.forEach((item) => {
-
-            grid.innerHTML += makeProject(item);
-
+            if(item.show === "true") {
+                grid.innerHTML += makeProject(item);
+            }
 
 
         });

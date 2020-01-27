@@ -11,7 +11,7 @@ const scrollNavHide = () => {
         let scroll = $(document).scrollTop();
 
         // if(scroll < navHeight) {console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display: ${navDisplay} \n Nav Hidden: ${ishidden} \n  isExpanding: ${isExpanding}`);}
-        
+
         if(scroll > navHeight && !ishidden) {
             $('.navbar').fadeOut(200);
             ishidden = true;
@@ -32,7 +32,7 @@ const scrollTo = (id) => {
     console.log($(id).offset().top);
     $('html, body').animate({
         scrollTop: $(id).offset().top + 30
-    }, 256, () =>{
+    }, 256, () => {
         // finished operation - unblock scroll listener
         isExpanding = false;
     });
@@ -52,11 +52,11 @@ const expandOnClick = () => {
         // fade out navbar when project goes fs
         if($('.navbar').height() !== 0) {
             $('.navbar').fadeOut(200);
-        
+
             ishidden = true;
         } else {
             $('.navbar').fadeIn(200);
-          
+
             ishidden = false;
 
         }
@@ -71,7 +71,7 @@ const expandOnClick = () => {
         $(link).find('iframe').toggleClass('fullheight');
 
         setTimeout(scrollTo.bind(null, link), 500);
-        
+
     });
 
 }
@@ -87,7 +87,7 @@ $(document).ready(function() {
     // toggle navbar
 
 
-   
+
     // wait until divs have loaded to set up event listeners.
 
 
@@ -124,6 +124,7 @@ $(document).ready(function() {
     $('.langpopup').click(function(e) {
         $(this).children().toggleClass('flip');
         $(this).next().toggleClass('hidden');
+
     });
 
 

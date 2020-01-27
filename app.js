@@ -6,10 +6,12 @@ const express = require('express'),
     dotenv = require('dotenv');
 
 // load language json
-const languages = require('./public/data/skills.json');
+const skills = require('./public/data/skills.json');
+const projects = require('./public/data/projects.json');
 
 dotenv.config();
 const app = express();
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -19,11 +21,38 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
+const projectLinks = () => {
+        for(let skill of skills) {
+            // for each skill, get the language - 
+            let lang = skill.language;
+            skill.projects = [];
+            // search languages array of projects and return all matching projects. 
+            projects.map((project) => {
+                const regex = new RegExp(`(${lang.split(" ")[0]})`, 'g', 'i');
+                for(let item of project.languages) {
+                    if(regex.test(item)) {
+                        skill.projects.push({
+                            name: project.name,
+                            url: project.url
+                        });
+                    }
+                }
+            })
+        }
+    }
+    // search the projects json language fields, if language === project, Display project title with link. 
 
 app.get('/', (req, res) => {
 
+
+    projectLinks();
+
+
+
+
+
     res.render('index', {
-        languages: languages
+        skills: skills
     });
 
 });
