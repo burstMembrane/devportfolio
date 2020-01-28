@@ -1,3 +1,4 @@
+// load dependencies
 const express = require('express'),
     bodyParser = require('body-parser'),
     nodeMailer = require('nodemailer'),
@@ -8,10 +9,12 @@ const express = require('express'),
 // load language json
 const skills = require('./public/data/skills.json');
 const projects = require('./public/data/projects.json');
+
+// Destructure dependencies list from package.json
 const { dependencies } = require('./package.json');
 const depArray = Object.keys(dependencies);
 
-
+// set up environment variables
 dotenv.config();
 const app = express();
 
@@ -50,7 +53,6 @@ const getProjectLinks = () => {
 app.get('/', (req, res) => {
 
     getProjectLinks();
-
     res.render('index', { skills: skills });
 
 });
@@ -95,12 +97,13 @@ app.post('/contact', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-
-    const jsonStr = JSON.stringify(projects[0], null, 2);
-    const exampleProject = hljs.highlightAuto(jsonStr);
-
+    // get first project as example code
+    let jsonStr = JSON.stringify(projects[0], null, 2);
+    jsonStr = jsonStr.replace(/[{}]/g, '');
+    const exampleProject = hljs.highlightAuto(jsonStr).value;
     const [exampleSkill] = skills;
-    res.render('about', { exampleProject: exampleProject.value, exampleSkill: exampleSkill, dependencies: depArray, moment: moment });
+
+    res.render('about', { exampleProject: exampleProject, exampleSkill: exampleSkill, dependencies: depArray, moment: moment });
 })
 app.listen(process.env.PORT, process.env.HOST, () => {
     console.log(`server running on http://${process.env.HOST}:${process.env.PORT}`);
