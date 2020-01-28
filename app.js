@@ -1,13 +1,16 @@
 const express = require('express'),
-    axios = require('axios'),
-    path = require('path'),
     bodyParser = require('body-parser'),
     nodeMailer = require('nodemailer'),
-    dotenv = require('dotenv');
+    hljs = require('highlight.js'),
+    dotenv = require('dotenv'),
+    moment = require('moment');
 
 // load language json
 const skills = require('./public/data/skills.json');
 const projects = require('./public/data/projects.json');
+const { dependencies } = require('./package.json');
+const depArray = Object.keys(dependencies);
+
 
 dotenv.config();
 const app = express();
@@ -21,36 +24,34 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-const projectLinks = () => {
-        for(let skill of skills) {
-            // for each skill, get the language - 
-            let lang = skill.language;
-            skill.projects = [];
-            // search languages array of projects and return all matching projects. 
-            projects.map((project) => {
-                const regex = new RegExp(`(${lang.split(" ")[0]})`, 'g', 'i');
-                for(let item of project.languages) {
-                    if(regex.test(item)) {
-                        skill.projects.push({
-                            name: project.name,
-                            url: project.url
-                        });
-                    }
-                }
-            })
-        }
-    };
-
-    
+const getProjectLinks = () => {
     // search the projects json language fields, if language === project, Display project title with link. 
+    for (let skill of skills) {
+        // for each skill, get the language 
+        let lang = skill.language;
+        skill.projects = [];
+        // search languages array of projects and return all matching projects. 
+        projects.map((project) => {
+            const regex = new RegExp(`(${lang.split(" ")[0]})`, 'g', 'i');
+            for (let item of project.languages) {
+                if (regex.test(item)) {
+                    skill.projects.push({
+                        name: project.name,
+                        url: project.url
+                    });
+                }
+            }
+        });
+    }
+};
+
+
 
 app.get('/', (req, res) => {
 
-    projectLinks();
+    getProjectLinks();
 
-    res.render('index', {
-        skills: skills
-    });
+    res.render('index', { skills: skills });
 
 });
 
@@ -83,7 +84,7 @@ app.post('/contact', (req, res) => {
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
-        if(error) {
+        if (error) {
             return console.log(error);
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
@@ -93,7 +94,14 @@ app.post('/contact', (req, res) => {
     });
 });
 
+app.get('/about', (req, res) => {
 
+    const jsonStr = JSON.stringify(projects[0], null, 2);
+    const exampleProject = hljs.highlightAuto(jsonStr);
+
+    const [exampleSkill] = skills;
+    res.render('about', { exampleProject: exampleProject.value, exampleSkill: exampleSkill, dependencies: depArray, moment: moment });
+})
 app.listen(process.env.PORT, process.env.HOST, () => {
     console.log(`server running on http://${process.env.HOST}:${process.env.PORT}`);
 });

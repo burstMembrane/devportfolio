@@ -4,10 +4,10 @@ const embed = (item) => {
     // PROCESS JSON DATA AND RENDER HTML TEMPLATES
 
 
-    if(item.gifHash) {
+    if (item.gifHash) {
         return `<iframe scrollable="no" src="https://giphy.com/embed/${item.gifHash}" width="100%" height="100%" style="overflow: hidden; width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" frameBorder="0" class="giphy-embed"  allowFullScreen></iframe>`;
     }
-    if(item.penHash) {
+    if (item.penHash) {
         return `<p class="codepen-later" data-height="100%" data-theme-id="dark" data-default-tab="result" data-user="burstmembrane" data-preview="true" data-slug-hash="${item.penHash}" style="width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" data-pen-title="${item.name}">
         <span>See the Pen <a href="https://codepen.io/burstmembrane/pen/${item.penHash}">
         ${item.name}</a> by Liam Power (<a href="https://codepen.io/burstmembrane">@burstmembrane</a>)
@@ -57,7 +57,7 @@ axios.get('../data/projects.json')
 
         const items = data;
         items.forEach((item) => {
-            if(item.show === "true") {
+            if (item.show === "true") {
                 grid.innerHTML += makeProject(item);
             }
 
@@ -71,5 +71,5 @@ axios.get('../data/projects.json')
 
 
     }).catch((err) => {
-        renderError(err)
+        renderError(err);
     });

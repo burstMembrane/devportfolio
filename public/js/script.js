@@ -12,12 +12,12 @@ const scrollNavHide = () => {
 
         // if(scroll < navHeight) {console.log(`Scroll: ${scroll} \n Nav height: ${navHeight} \n Nav Display: ${navDisplay} \n Nav Hidden: ${ishidden} \n  isExpanding: ${isExpanding}`);}
 
-        if(scroll > navHeight && !ishidden) {
+        if (scroll > navHeight && !ishidden) {
             $('.navbar').fadeOut(200);
             ishidden = true;
             //
 
-        } else if(scroll < navHeight && ishidden && !isExpanding) {
+        } else if (scroll < navHeight && ishidden && !isExpanding) {
             $('.navbar').fadeIn(200);
             ishidden = false;
         }
@@ -50,7 +50,7 @@ const expandOnClick = () => {
         isExpanding = true;
         let link = $(this).attr('href');
         // fade out navbar when project goes fs
-        if($('.navbar').height() !== 0) {
+        if ($('.navbar').height() !== 0) {
             $('.navbar').fadeOut(200);
 
             ishidden = true;
@@ -74,7 +74,7 @@ const expandOnClick = () => {
 
     });
 
-}
+};
 
 $(document).ready(function() {
 
@@ -114,8 +114,8 @@ $(document).ready(function() {
     });
     let isMobile = window.innerWidth < 600;
 
-    console.log(isMobile)
-    if(!isMobile) scrollNavHide();
+    console.log(isMobile);
+    if (!isMobile) scrollNavHide();
 
 
 
@@ -143,7 +143,7 @@ $(document).ready(function() {
                 idx++;
                 spaces[idx] = str[idx];
                 element.innerHTML = spaces.join("");
-                if(idx === textLen) {
+                if (idx === textLen) {
                     idx = -1;
                     spaces.fill(" ");
                 }

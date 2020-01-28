@@ -79,6 +79,10 @@ a[title]:hover:before {
     padding: 2rem 0;
 }
 
+.padded-x {
+    padding: 0 2rem;
+}
+
 .hidden {
     display: none;
 }
