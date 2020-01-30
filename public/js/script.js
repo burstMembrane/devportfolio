@@ -77,7 +77,8 @@ const expandOnClick = () => {
 };
 
 $(document).ready(function() {
-
+    // load hljs for code highlighting.
+    hljs.initHighlightingOnLoad();
 
     // $('.checkbox').click(function(e) {
 
@@ -114,7 +115,7 @@ $(document).ready(function() {
     });
     let isMobile = window.innerWidth < 600;
 
-    console.log(isMobile);
+    if (isMobile) console.log('Mobile device detected.')
     if (!isMobile) scrollNavHide();
 
 

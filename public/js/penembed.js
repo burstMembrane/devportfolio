@@ -2,8 +2,6 @@
 
 const embed = (item) => {
     // PROCESS JSON DATA AND RENDER HTML TEMPLATES
-
-
     if (item.gifHash) {
         return `<iframe scrollable="no" src="https://giphy.com/embed/${item.gifHash}" width="100%" height="100%" style="overflow: hidden; width: 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 1em 0; padding: 1em;" frameBorder="0" class="giphy-embed"  allowFullScreen></iframe>`;
     }
