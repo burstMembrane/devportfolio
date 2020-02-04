@@ -68,6 +68,7 @@ a[title]:hover:before {
 
 .animated {
     /* preserve white space in animated text */
+    font-variant-numeric: tabular-nums;
     opacity: 0.5;
 }
 

@@ -145,11 +145,12 @@ $(document).ready(function() {
                 spaces[idx] = str[idx];
                 element.innerHTML = spaces.join("");
                 if (idx === textLen) {
-                    idx = -1;
+                    idx = 0;
                     spaces.fill(" ");
                 }
             },
             speed);
     };
+
 
 });

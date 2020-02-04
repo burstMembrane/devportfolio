@@ -330,6 +330,7 @@ a:hover {
 }
 
 .toggle {
+  cursor: pointer;
   position: fixed;
   text-align: center;
   width: 50px;
@@ -352,6 +353,7 @@ a:hover {
   width: 100%;
   align-items: center;
 }
+
 
 .form-container {
   margin: 3rem 0;
