@@ -3,7 +3,7 @@
         "name": "LN-001 Microphone",
         "imagePath": "../assets/img/preview.png",
         "caption": "A promo website for the LN-001 Microphone",
-        "url": "http://ln001.netlify.com/",
+        "url": "https://ln001.netlify.com/",
         "repo": "https://github.com/burstMembrane/starkdown",
         "languages": [
             "React.js",
