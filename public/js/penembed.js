@@ -13,7 +13,20 @@ const embed = (item) => {
         </p>
         <script async src="https://static.codepen.io/assets/embed/ei.js"></script>`;
 	} else {
-		return `<iframe class="externalsite" scrollable="no" src="${item.url}"></iframe>`;
+		// return `<iframe class="externalsite" scrollable="no" src="${item.url}"></iframe>`;
+		return `
+		<div 
+		data-img="${item.imagePath}" 
+		class="codegena_iframe" 
+		
+		data-src="${item.url}" 
+		style="height:500px;width:100%;" 
+		data-responsive="true" 
+		data-css="background:url('//codegena.com/wp-content/uploads/2015/09/loading.gif') black center center no-repeat;border:0px;">
+		<div class="iframe_overlay">
+		<div class="iframe_text">PREVIEW</div>
+		</div>
+		</div>`;
 	}
 };
 
