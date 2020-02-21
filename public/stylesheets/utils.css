@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.float-right {}
+
 
 iframe scrollbar {
     width: 0px;
@@ -106,7 +106,7 @@ a[title]:hover:before {
     opacity: 0.8;
 }
 
-.codegena_iframe:hover {}
+
 
 
 .iframe_overlay {
