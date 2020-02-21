@@ -21,7 +21,7 @@ const embed = (item) => {
 		data-src="${item.url}" 
 		style="height:500px;width:100%;" 
 		data-responsive="true" 
-		data-css="background:url('//codegena.com/wp-content/uploads/2015/09/loading.gif') black center center no-repeat;border:0px;">
+		data-css="background:url('assets/img/spinner.gif') black center center no-repeat;border:0px;">
 		<div class="iframe_overlay">
 		<div class="iframe_text">PREVIEW</div>
 		</div>
@@ -65,8 +65,9 @@ axios
                 grid.innerHTML += makeProject(item);
             }
         });
-
+        //  run embed codes after json loaded 
         window.__CPEmbed('.codepen-later');
+        // make iframes after json loaded
         makeIframes();
     })
     .catch((err) => {

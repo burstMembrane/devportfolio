@@ -88,17 +88,6 @@ $(document).ready(function() {
 		$('#sendmsg').html(` <img class="spinner" src="assets/img/spinner.gif">`);
 	});
 
-	$('.codegena_iframe').hover(
-		function(e) {
-			console.log($(this).children().find('.iframe_text'));
-			$(this).children().find('.iframe_text').fadeIn();
-		},
-		function(e) {
-			console.log($(this).children());
-			$(this).children().find('.iframe_text').fadeOut();
-		}
-	);
-
 	// On Mobile navbar toggle click
 	// fade navbars
 	$('.toggle').click((e) => {
@@ -135,5 +124,12 @@ $(document).ready(function() {
 		}, speed);
 	};
 
-	makeIframes();
+	$('.codegena_iframe').hover(
+		function(e) {
+			$(this).children().find('.iframe_text').fadeIn();
+		},
+		function(e) {
+			$(this).children().find('.iframe_text').fadeOut();
+		}
+	);
 });
