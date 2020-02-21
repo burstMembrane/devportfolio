@@ -67,6 +67,7 @@ axios
         });
 
         window.__CPEmbed('.codepen-later');
+        makeIframes();
     })
     .catch((err) => {
         renderError(err);
