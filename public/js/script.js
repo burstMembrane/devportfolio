@@ -124,12 +124,7 @@ $(document).ready(function() {
 		}, speed);
 	};
 
-	$('.codegena_iframe').hover(
-		function(e) {
-			$(this).children().find('.iframe_text').fadeIn();
-		},
-		function(e) {
-			$(this).children().find('.iframe_text').fadeOut();
-		}
-	);
+	$('.codegena_iframe').hover(function(e) {
+		$(this).children().find('.iframe_text').fadeToggle();
+	});
 });

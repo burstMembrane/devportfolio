@@ -1,166 +1,153 @@
 .fullwidth {
-    display: flex;
-    flex-direction: column;
-    margin: 70px auto;
-    width: 100% !important;
-    flex-grow: 100%;
-    transition: 100ms;
+	display: flex;
+	flex-direction: column;
+	margin: 70px auto;
+	width: 100% !important;
+	flex-grow: 100%;
+	transition: 100ms;
 }
 
 .float-left {
-    float: left;
+	float: left;
 }
 
 .centered {
-    text-align: center;
+	text-align: center;
 }
 
-
-
 iframe scrollbar {
-    width: 0px;
-    /* remove scrollbar space */
-    background: transparent;
-    /* optional: just make scrollbar invisible */
+	width: 0px;
+	/* remove scrollbar space */
+	background: transparent;
+	/* optional: just make scrollbar invisible */
 }
 
 scrollbar {
-    width: 0px;
-    /* remove scrollbar space */
-    background: transparent;
-    /* optional: just make scrollbar invisible */
+	width: 0px;
+	/* remove scrollbar space */
+	background: transparent;
+	/* optional: just make scrollbar invisible */
 }
 
 ::-webkit-scrollbar {
-    width: 0px;
-    /* remove scrollbar space */
-    background: transparent;
-    /* optional: just make scrollbar invisible */
+	width: 0px;
+	/* remove scrollbar space */
+	background: transparent;
+	/* optional: just make scrollbar invisible */
 }
-
 
 /* optional: show position indicator in red */
 
 ::-webkit-scrollbar-thumb {
-    background: transparent;
+	background: transparent;
 }
 
 .zoomedtext {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
 .fullheight {
-    height: calc(100vh - 300px);
+	height: calc(100vh - 300px);
 }
 
 .firstflex {
-    order: -1;
+	order: -1;
 }
 
 a[title]:hover:before {
-    content: attr(title);
-    position: absolute;
-    color: var(--sec-fg);
-    font-size: 1.0rem;
-    margin-top: -1.5rem;
-    transition: 0.5s;
+	content: attr(title);
+	position: absolute;
+	color: var(--sec-fg);
+	font-size: 1.0rem;
+	margin-top: -1.5rem;
+	transition: 0.5s;
 }
 
 .animated {
-    /* preserve white space in animated text */
-    font-variant-numeric: tabular-nums;
-    opacity: 0.5;
+	/* preserve white space in animated text */
+	font-variant-numeric: tabular-nums;
+	opacity: 0.5;
 }
 
 .padded {
-    padding: 2rem;
+	padding: 2rem;
 }
 
 .padded-y {
-    padding: 2rem 0;
+	padding: 2rem 0;
 }
 
 .padded-x {
-    padding: 0 2rem;
+	padding: 0 2rem;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
-
 .centered {
-    text-align: center;
+	text-align: center;
 }
 
 .small {
-    font-size: 1.5rem;
-    text-align: left;
+	font-size: 1.5rem;
+	text-align: left;
 }
 
 .thin {
-    -webkit-text-stroke: 2px var(--main-bg);
+	-webkit-text-stroke: 2px var(--main-bg);
 }
 
 .codegena_iframe {
-    margin: 1rem 0;
-    cursor: pointer;
-
+	margin: 1rem 0;
 }
-
-
-
 
 .iframe_overlay {
-
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-
-
+	z-index: 9999999;
+	width: 100%;
+	height: 100%;
 }
 
-
 .front {
-    z-index: 99999;
+	z-index: 99999;
 }
 
 .iframe_text {
-    cursor: pointer;
-    cursor: hand;
-    background-color: rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 9999999;
-    font-weight: 300 !important;
-    font-size: 2rem !important;
-    border: 1px solid white;
-    padding: 15px 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 50px;
-    color: white;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
+	cursor: pointer;
+	cursor: hand;
+	background-color: rgba(0, 0, 0, 0.1);
+	display: none;
+	z-index: 9999999 !important;
+	font-weight: 300 !important;
+	font-size: 2rem !important;
+	border: 1px solid white;
+	padding: 15px 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 50px;
+	color: white;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
 }
 
 .flip {
-    opacity: 0.4;
-    -moz-transform: scale(-1, -1);
-    -o-transform: scale(-1, -1);
-    -webkit-transform: scale(-1, -1);
-    transform: scale(-1, -1);
+	opacity: 0.4;
+	-moz-transform: scale(-1, -1);
+	-o-transform: scale(-1, -1);
+	-webkit-transform: scale(-1, -1);
+	transform: scale(-1, -1);
 }
 
 .error {
-    position: fixed;
-    left: 25%;
-    right: 25%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    position: fixed;
-    width: 50%;
-    display: flex;
-    background-color: rgb(114, 0, 0);
+	position: fixed;
+	left: 25%;
+	right: 25%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	position: fixed;
+	width: 50%;
+	display: flex;
+	background-color: rgb(114, 0, 0);
 }
