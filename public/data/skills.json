@@ -1,6 +1,9 @@
 [{
-        "language": "JavaScript",
-        "desc": "Event Listeners, Object Methods, ES6 Syntax, OOP and Data Structures, Logic Programming, UI and Experience Programming"
+        "language": "React",
+        "desc": "Class and functional components. React Hooks. State management and dynamic updates. Async API calls"
+    }, {
+        "language": "Vanilla JavaScript",
+        "desc": "Event Listeners, DOM Manipulation, Object Methods, ES6 Syntax, OOP and Data Structures, Logic Programming, UI and Experience Programming"
     },
     {
         "language": "jQuery",

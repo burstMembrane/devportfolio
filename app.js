@@ -13,7 +13,9 @@ const skills = require('./public/data/skills.json');
 const projects = require('./public/data/projects.json');
 
 // Destructure dependencies list from package.json
-const { dependencies } = require('./package.json');
+const {
+    dependencies
+} = require('./package.json');
 const depArray = Object.keys(dependencies);
 
 // set up environment variables
@@ -29,7 +31,9 @@ app.set('view engine', 'ejs');
 app.use(compression());
 app.use(minify());
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 
 const getProjectLinks = () => {
@@ -55,7 +59,9 @@ const getProjectLinks = () => {
 
 app.get('/', (req, res) => {
     getProjectLinks();
-    res.render('index', { skills: skills });
+    res.render('index', {
+        skills: skills
+    });
 });
 
 app.get('/projects', (req, res) => {

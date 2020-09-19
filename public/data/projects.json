@@ -1,11 +1,26 @@
 [{
+        "name": "Redacter",
+        "imagePath": "../assets/img/redacter.png",
+        "caption": "Changes real names to fake ones using Python and React",
+        "url": "https://redacter.herokuapp.com/",
+        "repo": "https://github.com/burstMembrane/redacter",
+        "languages": [
+            "React",
+            "Semantic-UI",
+            "Flask",
+            "Python"
+        ],
+        "show": "true"
+    },
+
+    {
         "name": "LN-001 Microphone",
         "imagePath": "../assets/img/ln001-preview.png",
         "caption": "A promo website for the LN-001 Microphone",
         "url": "https://ln001.netlify.com/",
-        "repo": "https://github.com/burstMembrane/starkdown",
+        "repo": "",
         "languages": [
-            "React.js",
+            "React",
             "Semantic-UI",
             "Node",
             "CSS"
@@ -19,7 +34,7 @@
         "url": "https://starkdown.herokuapp.com/",
         "repo": "https://github.com/burstMembrane/ln001site",
         "languages": [
-            "React.js",
+            "React",
             "Semantic-UI",
             "Node",
             "CSS"

@@ -46,23 +46,23 @@ class Colour {
             h = 0,
             s = 0,
             l = 0;
-        if(delta == 0) {
+        if (delta == 0) {
             h = 0;
-        } else if(cmax == r)
+        } else if (cmax == r)
         // red is max
         {
             h = ((g - b / delta % 6));
-        } else if(cmax == g)
+        } else if (cmax == g)
         // green is max
         {
             h = (b - r) / delta + 2;
-        } else if(cmax == r)
+        } else if (cmax == r)
         // blue is max
         {
             h = (r - g) / delta + 4;
         }
         h = Math.round(h * 60);
-        if(h < 0) h += 360;
+        if (h < 0) h += 360;
         // calculate lightness
         l = (cmax + cmin) / 2;
         // calculate saturation
@@ -100,4 +100,4 @@ class Colour {
 const c = new Colour()
 
 
-c.animateColour('body', c.randomColor(), c.oppositeFullBrightness(25, 80), c.oppositeFullBrightness(40, 60), c.opposite(), 500, )
+c.animateColour('body', c.randomColor(), c.oppositeFullBrightness(11, 80), c.oppositeFullBrightness(40, 80), c.opposite(), 500, )
