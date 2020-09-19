@@ -1,25 +1,25 @@
 {
-  "name": "developerportfolio",
-  "version": "1.0.0",
-  "description": "Developer Portfolio Website for Liam Power",
-  "main": "app.js",
-  "scripts": {
-    "test": "nodemon app.js",
-    "start": "node app.js"
-  },
-  "author": "Liam Power",
-  "license": "MIT",
-  "dependencies": {
-    "axios": "^0.19.1",
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.0.1",
-    "express": "^4.17.1",
-    "express-minify": "^1.0.0",
-    "highlight.js": "^9.18.0",
-    "moment": "^2.24.0",
-    "node-mailer": "^0.1.1",
-    "pretty-print-json": "^0.2.0"
-  }
+    "name": "developerportfolio",
+    "version": "1.0.0",
+    "description": "Developer Portfolio Website for Liam Power",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon app.js",
+        "start": "node app.js"
+    },
+    "author": "Liam Power",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.19.1",
+        "body-parser": "^1.19.0",
+        "compression": "^1.7.4",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "express-minify": "^1.0.0",
+        "highlight.js": "^9.18.0",
+        "moment": "^2.24.0",
+        "node-mailer": "^0.1.1",
+        "pretty-print-json": "^0.2.0"
+    }
 }
