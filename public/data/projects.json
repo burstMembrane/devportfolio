@@ -12,7 +12,19 @@
         ],
         "show": "true"
     },
-
+    {
+        "name": "This mask does not exist",
+        "imagePath": "../assets/img/mask.png",
+        "caption": "Uses NVIDIA StyleGan2 trained on a mask dataset to generate new images",
+        "url": "http://thismaskdoesnotexist.herokuapp.com/",
+        "repo": "https://github.com/burstMembrane/thismaskisnotreal",
+        "languages": [
+            "Semantic-UI",
+            "Flask",
+            "Python"
+        ],
+        "show": "true"
+    },
     {
         "name": "LN-001 Microphone",
         "imagePath": "../assets/img/ln001-preview.png",
