@@ -17,7 +17,7 @@
         "ejs": "^3.0.1",
         "express": "^4.17.1",
         "express-minify": "^1.0.0",
-        "highlight.js": "^9.18.0",
+        "highlight.js": "^10.1.2",
         "moment": "^2.24.0",
         "node-mailer": "^0.1.1",
         "pretty-print-json": "^0.2.0"
