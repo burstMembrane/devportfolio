@@ -18,7 +18,7 @@
         "express": "^4.17.1",
         "express-minify": "^1.0.0",
         "highlight.js": "^10.4.1",
-        "moment": "^2.24.0",
+        "moment": "^2.29.2",
         "node-mailer": "^0.1.1",
         "pretty-print-json": "^0.2.0"
     }
